@@ -1,0 +1,17 @@
+from sklearn import datasets,linear_model
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+diabetes=datasets.load_diabetes()
+data=diabetes.data[:,np.newaxis,2]
+df=pd.DataFrame(diabetes.data,columns=diabetes.feature_names)
+train_y=diabetes.target[-30:]
+test_x=data[:-30]
+test_y=diabetes.target[:-30]
+df
+model=linear_model.LinearRegression()
+model.fit(train_x,train_y)
+pred=model.predict(test_x)
+
+plt.scatter(test_x,test_y)
+plt.plot(test_x,pred)
