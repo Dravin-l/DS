@@ -1,3 +1,4 @@
+#chech out website with this link http://192.168.1.11:8501
 import streamlit as st
 import pandas as pd
 from sklearn import datasets
